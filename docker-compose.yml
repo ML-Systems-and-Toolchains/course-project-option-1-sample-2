@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  opt1:
+    container_name: cp
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8889:8889
+      - 8888:8888
+    volumes:
+      - ./:/workspace:z
+    working_dir: /workspace
+    environment:
+      - PASSWORD=password
+      - GRANT_SUDO=yes
